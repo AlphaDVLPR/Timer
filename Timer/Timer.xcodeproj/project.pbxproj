@@ -11,6 +11,8 @@
 		E8AD699722F9D9D10028247B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8AD699522F9D9D10028247B /* Main.storyboard */; };
 		E8AD699922F9D9D30028247B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8AD699822F9D9D30028247B /* Assets.xcassets */; };
 		E8AD699C22F9D9D30028247B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8AD699A22F9D9D30028247B /* LaunchScreen.storyboard */; };
+		E8AD69A822F9DE1F0028247B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AD69A722F9DE1F0028247B /* ViewController.swift */; };
+		E8AD69AA22F9DE8D0028247B /* NapTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AD69A922F9DE8D0028247B /* NapTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		E8AD699822F9D9D30028247B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8AD699B22F9D9D30028247B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8AD699D22F9D9D30028247B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8AD69A722F9DE1F0028247B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E8AD69A922F9DE8D0028247B /* NapTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 		E8AD699022F9D9D10028247B /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				E8AD69AB22F9DEB70028247B /* Utility */,
 				E8AD69A622F9DA010028247B /* ModelViewController */,
 				E8AD69A522F9D9F10028247B /* ModelController */,
 				E8AD69A422F9D9EA0028247B /* Resource */,
@@ -82,6 +87,7 @@
 		E8AD69A522F9D9F10028247B /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
+				E8AD69A722F9DE1F0028247B /* ViewController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -91,6 +97,14 @@
 			children = (
 			);
 			path = ModelViewController;
+			sourceTree = "<group>";
+		};
+		E8AD69AB22F9DEB70028247B /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E8AD69A922F9DE8D0028247B /* NapTimer.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +178,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8AD69A822F9DE1F0028247B /* ViewController.swift in Sources */,
+				E8AD69AA22F9DE8D0028247B /* NapTimer.swift in Sources */,
 				E8AD699222F9D9D10028247B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
