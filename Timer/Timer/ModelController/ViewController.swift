@@ -18,12 +18,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        napTimer.startTimer(30)
+        napTimer.delegate = self
         // Do any additional setup after loading the view.
     }
     
 
     @IBAction func timeButtonTapper(_ sender: Any) {
+        
+        if napTimer.isOn {
+            napTimer.stopTimer()
+        } else {
+            
+        }
     }
     
     /*
@@ -35,5 +41,76 @@ class ViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    func updateLabelAndButton() {
+        timeLabel.text = napTimer.timeLeftAsString()
+        
+        var buttonTitle = ""
+        var buttonColor: UIColor = .black
+        
+        if napTimer.isOn {
+            
+            buttonTitle = "Stop"
+            buttonColor = .red
+        } else {
+            buttonTitle = "Start"
+            buttonColor = .green
+        }
+        
+        timeButton.setTitle(buttonTitle, for: .normal)
+        timeButton.setTitleColor(buttonColor, for: .normal)
+    }
+    
+    func presentAlert() {
+        
+        //create alert controller
+        
+        let alertController = UIAlertController(title: "TIMES UP BITCH", message: "DONT BE A BETA WAKE UP", preferredStyle: .alert)
+        
+        //add textfield and actions
+        
+        alertController.addTextField { (textField) in
+            
+            textField.keyboardType = .numberPad
+            textField.placeholder = "How many more seconds of sleep?"
+        //present alert controller
+    }
+        
+        let dismissAction = UIAlertAction(title: "IM AWAKE BITCH", style: .destructive, handler: nil)
+        
+        alertController.addAction(dismissAction)
+        
+        let snoozeAction = UIAlertAction(title: "SLEEP THEN HOE", style: .default) { (_) in
+            
+            if let textField = alertController.textFields?.first,
+            
+            let inputText = textField.text,
+            
+                let textAsDouble = Double(inputText) {
+                
+                self.napTimer.startTimer(textAsDouble)
+        }
 }
+    
+        alertController.addAction(dismissAction)
+        alertController.addAction(snoozeAction)
+        
+        present(alertController, animated: true)
+        
+    }}
+extension ViewController: NapTimerDelegate {
+    func timerCompleted() {
+        updateLabelAndButton()
+    }
+    
+    func timerStopped() {
+        updateLabelAndButton()
+    }
+    
+    func timerSecondTicked() {
+        updateLabelAndButton()
+        presentAlert()
+    }
+    
+}
+

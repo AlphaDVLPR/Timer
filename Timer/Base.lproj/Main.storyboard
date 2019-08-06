@@ -20,17 +20,18 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKn-lg-viR">
                                 <rect key="frame" x="0.0" y="638" width="414" height="224"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="START"/>
                                 <connections>
                                     <action selector="timeButtonTapper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tx6-vh-vgw"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="05X-nY-QMx">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="05X-nY-QMx">
                                 <rect key="frame" x="62" y="332" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XW9-5S-GO3">
-                                <rect key="frame" x="117" y="162" width="180" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XW9-5S-GO3">
+                                <rect key="frame" x="184" y="162" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -40,12 +41,14 @@
                         <constraints>
                             <constraint firstItem="05X-nY-QMx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9RQ-ju-MLz"/>
                             <constraint firstItem="DKn-lg-viR" firstAttribute="top" secondItem="05X-nY-QMx" secondAttribute="bottom" id="MCC-B5-1Yh"/>
+                            <constraint firstItem="XW9-5S-GO3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="118" id="P2v-lq-Nck"/>
                             <constraint firstItem="05X-nY-QMx" firstAttribute="top" secondItem="XW9-5S-GO3" secondAttribute="bottom" id="PXQ-C5-GJh"/>
                             <constraint firstItem="DKn-lg-viR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Q2z-GF-OMR"/>
                             <constraint firstItem="DKn-lg-viR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="SWv-Lv-4yw"/>
                             <constraint firstItem="DKn-lg-viR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="Vy0-eh-EtM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DKn-lg-viR" secondAttribute="bottom" id="bxu-Dp-oqm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="05X-nY-QMx" secondAttribute="trailing" id="gyX-MZ-bl1"/>
+                            <constraint firstItem="XW9-5S-GO3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="y5P-ji-X3E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
