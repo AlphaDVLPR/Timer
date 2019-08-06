@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ViewController: UIViewController {
 
@@ -89,6 +90,8 @@ class ViewController: UIViewController {
                 let textAsDouble = Double(inputText) {
                 
                 self.napTimer.startTimer(textAsDouble)
+                self.schedualeLocalAlert(in: textAsDouble)
+                
         }
 }
     
@@ -97,7 +100,29 @@ class ViewController: UIViewController {
         
         present(alertController, animated: true)
         
-    }}
+    }
+    
+    func schedualeLocalAlert(in timeInterval: TimeInterval) {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Time's Up"
+        content.body = "All the time is up"
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "NapTimer", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("NOTIFICATION FAILED")
+                print(error.localizedDescription)
+                print(error)
+                
+            }
+        }
+    }
+}
 extension ViewController: NapTimerDelegate {
     func timerCompleted() {
         updateLabelAndButton()
